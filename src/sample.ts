@@ -3,8 +3,14 @@ class Water extends Resource {}
 class Espresso extends Resource {}
 
 class Cup {
-    constructor() {}
-    add(resource: Resource): void {}
+    cup;
+    constructor() {
+        this.cup = {};
+    }
+
+    add(resource: Resource): void {
+        this.cup = { ...this.cup, resource };
+    }
 }
 
 function makeCoffee() {
@@ -14,6 +20,7 @@ function makeCoffee() {
 
     cup.add(water);
     cup.add(espresso);
+    cup.add("아메리카노");
 
     return cup;
 }
