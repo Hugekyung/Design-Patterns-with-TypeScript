@@ -22,6 +22,19 @@ class CoffeeFactory implements ICoffeeFactory {
     }
 }
 
+// * 아래와 같은 방식으로 CoffeeFactory를 상속 받아 다른 클래스를 생성할 수 있다.
+class HotCoffeeFactory extends CoffeeFactory {
+    constructor() {}
+
+    makeCup(): Cup {
+        return new PaperCup();
+    }
+
+    makeWater(): Water {
+        return new HotWater();
+    }
+}
+
 const coffeeFactory = new CoffeeFactory();
 const coffee = makeCoffee(coffeeFactory);
 console.log("result >>", coffee);
