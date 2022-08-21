@@ -1,8 +1,8 @@
 class Resource {}
-class Water extends Resource {}
-class Espresso extends Resource {}
+export class Water extends Resource {}
+export class Espresso extends Resource {}
 
-class Cup {
+export class Cup {
     cup;
     constructor() {
         this.cup = {};
@@ -12,18 +12,3 @@ class Cup {
         this.cup = { ...this.cup, resource };
     }
 }
-
-function makeCoffee() {
-    const cup: Cup = new Cup();
-    const water: Water = new Water();
-    const espresso: Espresso = new Espresso();
-
-    cup.add(water);
-    cup.add(espresso);
-    cup.add("아메리카노");
-
-    return cup;
-}
-
-const coffee = makeCoffee();
-console.log("result >>", coffee);
