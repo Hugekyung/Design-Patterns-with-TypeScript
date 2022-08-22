@@ -4,6 +4,7 @@ export class Espresso extends Resource {}
 
 export class Cup {
     cup;
+    resource: any;
     constructor() {
         this.cup = {};
     }
@@ -15,3 +16,21 @@ export class Cup {
 
 export class PaperCup extends Cup {}
 export class HotWater extends Water {}
+
+export class ColdWater extends Water {}
+export class Bean extends Resource {
+    beanName: string;
+    constructor(name: string) {
+        super();
+        this.beanName = name;
+    }
+}
+export class EspressoMachine extends Resource {
+    constructor() {
+        super();
+    }
+
+    make(bean: Bean) {
+        return bean;
+    }
+}
