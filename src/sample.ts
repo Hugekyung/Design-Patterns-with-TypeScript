@@ -12,3 +12,6 @@ export class Cup {
         this.cup = { ...this.cup, resource };
     }
 }
+
+export class PaperCup extends Cup {}
+export class HotWater extends Water {}

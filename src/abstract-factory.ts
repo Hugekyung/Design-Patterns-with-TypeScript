@@ -1,5 +1,5 @@
 import { makeCoffee } from "./makeCoffee";
-import { Cup, Water, Espresso } from "./sample";
+import { Cup, Water, Espresso, PaperCup, HotWater } from "./sample";
 
 export interface ICoffeeFactory {
     makeCup(): Cup;
@@ -24,7 +24,9 @@ class CoffeeFactory implements ICoffeeFactory {
 
 // * 아래와 같은 방식으로 CoffeeFactory를 상속 받아 다른 클래스를 생성할 수 있다.
 class HotCoffeeFactory extends CoffeeFactory {
-    constructor() {}
+    constructor() {
+        super();
+    }
 
     makeCup(): Cup {
         return new PaperCup();
