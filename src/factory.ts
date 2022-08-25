@@ -20,10 +20,9 @@ abstract class CoffeeMaker {
         const water: Water = this.makeWater();
         const espresso: Espresso = this.makeEspresso();
 
-        console.log(water);
-        console.log(espresso);
-        cup.add(water);
-        cup.add(espresso);
+        const resources = { water, espresso };
+
+        cup.add(resources);
         console.log(cup);
 
         return cup;
@@ -31,10 +30,6 @@ abstract class CoffeeMaker {
 }
 
 class LatteCoffeeMaker extends CoffeeMaker {
-    // constructor() {
-    //     super();
-    // }
-
     makeCup(): Cup {
         return new PaperCup();
     }

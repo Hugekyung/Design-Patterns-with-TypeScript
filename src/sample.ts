@@ -3,22 +3,26 @@ export class Water extends Resource {}
 export class Espresso extends Resource {}
 export class Milk extends Resource {}
 
+export interface Resources {
+    water?: Water;
+    espresso?: Espresso;
+    milk?: Milk;
+}
+
 export class Cup {
     cup;
-    resource: any;
     constructor() {
         this.cup = {};
     }
 
-    add(resource: Resource): void {
-        this.cup = { ...this.cup, resource };
+    add(resources: Resources): void {
+        this.cup = { ...this.cup, resources };
     }
 }
 
 export class PaperCup extends Cup {}
 
 export class HotWater extends Water {}
-// export class Milk extends Water {}
 export class ColdWater extends Water {}
 
 export class Bean extends Resource {
@@ -28,6 +32,7 @@ export class Bean extends Resource {
         this.beanName = name;
     }
 }
+
 export class EspressoMachine extends Resource {
     constructor() {
         super();
