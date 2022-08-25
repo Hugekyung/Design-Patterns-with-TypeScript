@@ -1,6 +1,7 @@
 class Resource {}
 export class Water extends Resource {}
 export class Espresso extends Resource {}
+export class Milk extends Resource {}
 
 export class Cup {
     cup;
@@ -15,9 +16,11 @@ export class Cup {
 }
 
 export class PaperCup extends Cup {}
-export class HotWater extends Water {}
 
+export class HotWater extends Water {}
+// export class Milk extends Water {}
 export class ColdWater extends Water {}
+
 export class Bean extends Resource {
     beanName: string;
     constructor(name: string) {
