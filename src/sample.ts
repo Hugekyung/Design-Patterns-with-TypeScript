@@ -15,7 +15,7 @@ export class Cup {
         this.cup = {};
     }
 
-    add(resources: Resources): void {
+    add(resources: Partial<Resources>): void {
         this.cup = { ...this.cup, resources };
     }
 }
@@ -38,7 +38,7 @@ export class EspressoMachine extends Resource {
         super();
     }
 
-    make(bean: Bean) {
+    make(bean: Bean): Espresso {
         return bean;
     }
 }

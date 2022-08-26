@@ -26,7 +26,8 @@ class ColdCoffeeBuilder implements CoffeeBuilder {
     buildEspresso() {
         const machine = new EspressoMachine();
         const bean = new Bean("콜롬비아");
-        this.cup.add(machine.make(bean));
+        const espresso = machine.make(bean);
+        this.cup.add(espresso);
     }
 
     getCoffee(): Cup {

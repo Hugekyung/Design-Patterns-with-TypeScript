@@ -1,5 +1,6 @@
 import { Cup, Espresso, Milk, PaperCup, Water } from "./sample";
 
+// 커피 생성에 필요한 함숟르을 모아둔 클래스
 abstract class CoffeeMaker {
     constructor() {}
 
@@ -21,14 +22,13 @@ abstract class CoffeeMaker {
         const espresso: Espresso = this.makeEspresso();
 
         const resources = { water, espresso };
-
         cup.add(resources);
-        console.log(cup);
 
         return cup;
     }
 }
 
+// 어떤 객체를 만들 것인지 내용을 정의하는 클래스
 class LatteCoffeeMaker extends CoffeeMaker {
     makeCup(): Cup {
         return new PaperCup();
